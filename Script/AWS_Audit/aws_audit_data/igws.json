@@ -1,0 +1,116 @@
+{
+    "InternetGateways": [
+        {
+            "Attachments": [
+                {
+                    "State": "available",
+                    "VpcId": "vpc-0b6d1a271aed23d7d"
+                }
+            ],
+            "InternetGatewayId": "igw-00d68eaae99799c00",
+            "OwnerId": "963692744518",
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-igw"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                }
+            ]
+        },
+        {
+            "Attachments": [
+                {
+                    "State": "available",
+                    "VpcId": "vpc-0927f73fae018a1ce"
+                }
+            ],
+            "InternetGatewayId": "igw-04ee7de3ad6b7cce6",
+            "OwnerId": "963692744518",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-igw"
+                }
+            ]
+        },
+        {
+            "Attachments": [
+                {
+                    "State": "available",
+                    "VpcId": "vpc-0bde04044d9620e99"
+                }
+            ],
+            "InternetGatewayId": "igw-0ea3b8712d43d3300",
+            "OwnerId": "963692744518",
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-igw"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                }
+            ]
+        },
+        {
+            "Attachments": [
+                {
+                    "State": "available",
+                    "VpcId": "vpc-0afb203d35856fec8"
+                }
+            ],
+            "InternetGatewayId": "igw-0f93db090e481f27d",
+            "OwnerId": "963692744518",
+            "Tags": [
+                {
+                    "Key": "Application",
+                    "Value": "Network"
+                },
+                {
+                    "Key": "Enterprise",
+                    "Value": "Chilquintas"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-igw"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "Infraestructura TI "
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "PRD"
+                }
+            ]
+        }
+    ]
+}

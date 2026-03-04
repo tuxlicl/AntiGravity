@@ -1,0 +1,1041 @@
+{
+    "SecurityGroups": [
+        {
+            "GroupId": "sg-0eac574170cad4639",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow all outbound",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-neptune-sg"
+                }
+            ],
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0eac574170cad4639",
+            "OwnerId": "963692744518",
+            "GroupName": "enterprise-rag-v2-neptune-20260219105722696100000007",
+            "Description": "Security group for Neptune Serverless",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 8182,
+                    "ToPort": 8182,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Neptune access from Lambda only",
+                            "UserId": "963692744518",
+                            "GroupId": "sg-0e657a66f3f8945eb"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0d36eb5325a6bfa2a",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow all outbound",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-opensearch-sg"
+                }
+            ],
+            "VpcId": "vpc-0bde04044d9620e99",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0d36eb5325a6bfa2a",
+            "OwnerId": "963692744518",
+            "GroupName": "enterprise-rag-opensearch-20260219021414983700000005",
+            "Description": "Security group for Managed OpenSearch Cluster",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "HTTPS access from Lambda only",
+                            "UserId": "963692744518",
+                            "GroupId": "sg-0cc12b4cc9e3f3960"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0cc12b4cc9e3f3960",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow all outbound traffic",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-lambda-sg"
+                }
+            ],
+            "VpcId": "vpc-0bde04044d9620e99",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0cc12b4cc9e3f3960",
+            "OwnerId": "963692744518",
+            "GroupName": "enterprise-rag-lambda-20260219021413435800000003",
+            "Description": "Security group for Lambda functions",
+            "IpPermissions": []
+        },
+        {
+            "GroupId": "sg-0e81beff12ed6b293",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0e81beff12ed6b293",
+            "OwnerId": "963692744518",
+            "GroupName": "SG-SRV-INFRA-LINUXPIVOTE",
+            "Description": "SG-SRV-INFRA-LINUXPIVOTE",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "IP_FW_MIRAFLORES",
+                            "CidrIp": "200.31.52.114/32"
+                        },
+                        {
+                            "CidrIp": "190.153.249.201/32"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 8501,
+                    "ToPort": 8501,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-006fc7f8ef76de67d",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-006fc7f8ef76de67d",
+            "OwnerId": "963692744518",
+            "GroupName": "SG-SRV-INFRA-LINUXPIVOTE-JAYALA",
+            "Description": "SG-SRV-INFRA-LINUXPIVOTE-JAYALA",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "IP_FW_MIRAFLORES",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 7860,
+                    "ToPort": 7860,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0b2b32e2f2898bea7",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0b2b32e2f2898bea7",
+            "OwnerId": "963692744518",
+            "GroupName": "molbot-sg",
+            "Description": "Security group for MolBot Telegram bot",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-081d99be6561625d4",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0afb203d35856fec8",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-081d99be6561625d4",
+            "OwnerId": "963692744518",
+            "GroupName": "SG-SRV-LINUXPIVOTEPRACTICANTE",
+            "Description": "SRV-LINUXPIVOTEPRACTICANTE",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 80,
+                    "ToPort": 80,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "icmp",
+                    "FromPort": -1,
+                    "ToPort": -1,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "192.168.3.0/24"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0b99364b3154cc3bc",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0b99364b3154cc3bc",
+            "OwnerId": "963692744518",
+            "GroupName": "chilquinta-training-sg",
+            "Description": "Security group for Chilquinta fine-tuning EC2 instances",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "SSH access",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0b04f73c580af7a85",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow all outbound",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-neptune-sg"
+                }
+            ],
+            "VpcId": "vpc-0bde04044d9620e99",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0b04f73c580af7a85",
+            "OwnerId": "963692744518",
+            "GroupName": "enterprise-rag-neptune-20260219021414984000000006",
+            "Description": "Security group for Neptune Serverless",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 8182,
+                    "ToPort": 8182,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Neptune access from Lambda only",
+                            "UserId": "963692744518",
+                            "GroupId": "sg-0cc12b4cc9e3f3960"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-02992c613aeb5a565",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0afb203d35856fec8",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-02992c613aeb5a565",
+            "OwnerId": "963692744518",
+            "GroupName": "default",
+            "Description": "default VPC security group",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                        {
+                            "UserId": "963692744518",
+                            "GroupId": "sg-02992c613aeb5a565"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0509d83e88065db76",
+            "IpPermissionsEgress": [],
+            "Tags": [
+                {
+                    "Key": "GuardDutyManaged",
+                    "Value": "true"
+                }
+            ],
+            "VpcId": "vpc-0afb203d35856fec8",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0509d83e88065db76",
+            "OwnerId": "963692744518",
+            "GroupName": "GuardDutyManagedSecurityGroup-vpc-0afb203d35856fec8",
+            "Description": "Associated with VPC-vpc-0afb203d35856fec8 and tagged as GuardDutyManaged",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "GuardDuty managed security group inbound rule associated with VPC vpc-0afb203d35856fec8",
+                            "CidrIp": "10.20.2.0/24"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0a9afb71d9f425275",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow all outbound",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-opensearch-sg"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                }
+            ],
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0a9afb71d9f425275",
+            "OwnerId": "963692744518",
+            "GroupName": "enterprise-rag-v2-opensearch-20260219105722698300000008",
+            "Description": "Security group for Managed OpenSearch Cluster",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "HTTPS access from Lambda only",
+                            "UserId": "963692744518",
+                            "GroupId": "sg-0e657a66f3f8945eb"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-09afc637108ae1d77",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0afb203d35856fec8",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-09afc637108ae1d77",
+            "OwnerId": "963692744518",
+            "GroupName": "SRV-PIV-CALISTE",
+            "Description": "SRV-PIV-CALISTE",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "icmp",
+                    "FromPort": -1,
+                    "ToPort": -1,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "192.168.3.0/24"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0dc420362a222962a",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0bde04044d9620e99",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0dc420362a222962a",
+            "OwnerId": "963692744518",
+            "GroupName": "default",
+            "Description": "default VPC security group",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                        {
+                            "UserId": "963692744518",
+                            "GroupId": "sg-0dc420362a222962a"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-013cc5b75f70ab0db",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-013cc5b75f70ab0db",
+            "OwnerId": "963692744518",
+            "GroupName": "chatbot-gpu-sg",
+            "Description": "Security group for GPU chatbot server (SSH + Gradio)",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 8080,
+                    "ToPort": 8080,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 7860,
+                    "ToPort": 7860,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-096272dc4b373ffaa",
+            "IpPermissionsEgress": [],
+            "Tags": [
+                {
+                    "Key": "GuardDutyManaged",
+                    "Value": "true"
+                }
+            ],
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-096272dc4b373ffaa",
+            "OwnerId": "963692744518",
+            "GroupName": "GuardDutyManagedSecurityGroup-vpc-0b6d1a271aed23d7d",
+            "Description": "Associated with VPC-vpc-0b6d1a271aed23d7d and tagged as GuardDutyManaged",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "GuardDuty managed security group inbound rule associated with VPC vpc-0b6d1a271aed23d7d",
+                            "CidrIp": "10.10.0.0/16"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0de064f46290c6aa3",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0afb203d35856fec8",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0de064f46290c6aa3",
+            "OwnerId": "963692744518",
+            "GroupName": "launch-wizard-1",
+            "Description": "launch-wizard-1 created 2026-02-27T19:54:20.903Z",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-05d641948ebdae14c",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-05d641948ebdae14c",
+            "OwnerId": "963692744518",
+            "GroupName": "default",
+            "Description": "default VPC security group",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                        {
+                            "UserId": "963692744518",
+                            "GroupId": "sg-05d641948ebdae14c"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-06054422b3096664b",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-06054422b3096664b",
+            "OwnerId": "963692744518",
+            "GroupName": "default",
+            "Description": "default VPC security group",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                        {
+                            "UserId": "963692744518",
+                            "GroupId": "sg-06054422b3096664b"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0e657a66f3f8945eb",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow all outbound traffic",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-lambda-sg"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                }
+            ],
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0e657a66f3f8945eb",
+            "OwnerId": "963692744518",
+            "GroupName": "enterprise-rag-v2-lambda-20260219105721312500000006",
+            "Description": "Security group for Lambda functions",
+            "IpPermissions": []
+        },
+        {
+            "GroupId": "sg-0d42fb636da60fd39",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0d42fb636da60fd39",
+            "OwnerId": "963692744518",
+            "GroupName": "SG_SRV_CIBERSEGURIDAD",
+            "Description": "SRV-CIBERSEGURIDAD",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0fbaf390fc2d77746",
+            "IpPermissionsEgress": [],
+            "Tags": [
+                {
+                    "Key": "GuardDutyManaged",
+                    "Value": "true"
+                }
+            ],
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0fbaf390fc2d77746",
+            "OwnerId": "963692744518",
+            "GroupName": "GuardDutyManagedSecurityGroup-vpc-0927f73fae018a1ce",
+            "Description": "Associated with VPC-vpc-0927f73fae018a1ce and tagged as GuardDutyManaged",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "GuardDuty managed security group inbound rule associated with VPC vpc-0927f73fae018a1ce",
+                            "CidrIp": "10.20.0.0/24"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0e0f4a358e2782055",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-0afb203d35856fec8",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:963692744518:security-group/sg-0e0f4a358e2782055",
+            "OwnerId": "963692744518",
+            "GroupName": "SG-SRV-CIBERSEGURIDAD",
+            "Description": "SG-SRV-CIBERSEGURIDAD",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        }
+    ]
+}

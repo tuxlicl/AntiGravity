@@ -1,0 +1,176 @@
+{
+    "Vpcs": [
+        {
+            "OwnerId": "963692744518",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-093a4b74db4a326ac",
+                    "CidrBlock": "10.20.0.0/24",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "Enterprise",
+                    "Value": "Chilquintas"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL_1"
+                },
+                {
+                    "Key": "Application",
+                    "Value": "Networking - VPC"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "PRD"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "Infraestructura TI"
+                }
+            ],
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "State": "available",
+            "CidrBlock": "10.20.0.0/24",
+            "DhcpOptionsId": "dopt-081d9c340161d1681"
+        },
+        {
+            "OwnerId": "963692744518",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-05f4846e0721362c2",
+                    "CidrBlock": "10.10.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-vpc"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                }
+            ],
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "VpcId": "vpc-0bde04044d9620e99",
+            "State": "available",
+            "CidrBlock": "10.10.0.0/16",
+            "DhcpOptionsId": "dopt-081d9c340161d1681"
+        },
+        {
+            "OwnerId": "963692744518",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-0be8b0e0c0826e83c",
+                    "CidrBlock": "10.20.2.0/24",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-vpc"
+                },
+                {
+                    "Key": "Enterprise",
+                    "Value": "Chilquintas"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "Infraestructura TI "
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "PRD"
+                },
+                {
+                    "Key": "Application",
+                    "Value": "Network"
+                }
+            ],
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "VpcId": "vpc-0afb203d35856fec8",
+            "State": "available",
+            "CidrBlock": "10.20.2.0/24",
+            "DhcpOptionsId": "dopt-081d9c340161d1681"
+        },
+        {
+            "OwnerId": "963692744518",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-01d8f9708986adf01",
+                    "CidrBlock": "10.10.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-vpc"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                }
+            ],
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "State": "available",
+            "CidrBlock": "10.10.0.0/16",
+            "DhcpOptionsId": "dopt-081d9c340161d1681"
+        }
+    ]
+}

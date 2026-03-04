@@ -1,0 +1,53 @@
+{
+    "Buckets": [
+        {
+            "Name": "aws-cloudtrail-logs-963692744518-4d872361",
+            "CreationDate": "2026-03-02T10:54:48+00:00",
+            "BucketArn": "arn:aws:s3:::aws-cloudtrail-logs-963692744518-4d872361"
+        },
+        {
+            "Name": "bkp-onprem-veaam",
+            "CreationDate": "2026-02-18T20:31:10+00:00",
+            "BucketArn": "arn:aws:s3:::bkp-onprem-veaam"
+        },
+        {
+            "Name": "chilquinta-finetune-963692744518",
+            "CreationDate": "2026-02-23T13:50:27+00:00",
+            "BucketArn": "arn:aws:s3:::chilquinta-finetune-963692744518"
+        },
+        {
+            "Name": "config-bucket-963692744518",
+            "CreationDate": "2026-03-02T10:53:33+00:00",
+            "BucketArn": "arn:aws:s3:::config-bucket-963692744518"
+        },
+        {
+            "Name": "enterprise-rag-frontend-963692744518",
+            "CreationDate": "2026-02-19T02:14:03+00:00",
+            "BucketArn": "arn:aws:s3:::enterprise-rag-frontend-963692744518"
+        },
+        {
+            "Name": "enterprise-rag-tfstate-963692744518",
+            "CreationDate": "2026-02-19T02:08:27+00:00",
+            "BucketArn": "arn:aws:s3:::enterprise-rag-tfstate-963692744518"
+        },
+        {
+            "Name": "enterprise-rag-v2-documents-963692744518",
+            "CreationDate": "2026-02-19T10:54:27+00:00",
+            "BucketArn": "arn:aws:s3:::enterprise-rag-v2-documents-963692744518"
+        },
+        {
+            "Name": "enterprise-rag-v2-frontend-963692744518",
+            "CreationDate": "2026-02-19T10:54:27+00:00",
+            "BucketArn": "arn:aws:s3:::enterprise-rag-v2-frontend-963692744518"
+        },
+        {
+            "Name": "log-vpn-sts",
+            "CreationDate": "2026-02-20T16:32:24+00:00",
+            "BucketArn": "arn:aws:s3:::log-vpn-sts"
+        }
+    ],
+    "Owner": {
+        "ID": "3416f54e826800bb73ebd305c5b748a7efc3e0dd3968f25a2e9e8c9869e87406"
+    },
+    "Prefix": null
+}

@@ -1,0 +1,122 @@
+{
+    "DBInstances": [
+        {
+            "DBInstanceIdentifier": "enterprise-rag-v2-prod-neptune-instance-0",
+            "DBInstanceClass": "db.t3.medium",
+            "Engine": "neptune",
+            "DBInstanceStatus": "available",
+            "MasterUsername": "admin",
+            "Endpoint": {
+                "Address": "enterprise-rag-v2-prod-neptune-instance-0.cil8cc22e1r3.us-east-1.neptune.amazonaws.com",
+                "Port": 8182,
+                "HostedZoneId": "ZUFXD4SLT2LS7"
+            },
+            "AllocatedStorage": 1,
+            "InstanceCreateTime": "2026-02-19T11:14:19.779000+00:00",
+            "PreferredBackupWindow": "03:00-04:00",
+            "BackupRetentionPeriod": 7,
+            "DBSecurityGroups": [],
+            "VpcSecurityGroups": [
+                {
+                    "VpcSecurityGroupId": "sg-0eac574170cad4639",
+                    "Status": "active"
+                }
+            ],
+            "DBParameterGroups": [
+                {
+                    "DBParameterGroupName": "default.neptune1.4",
+                    "ParameterApplyStatus": "in-sync"
+                }
+            ],
+            "AvailabilityZone": "us-east-1b",
+            "DBSubnetGroup": {
+                "DBSubnetGroupName": "enterprise-rag-v2-prod-neptune-subnets",
+                "DBSubnetGroupDescription": "Managed by Terraform",
+                "VpcId": "vpc-0b6d1a271aed23d7d",
+                "SubnetGroupStatus": "Complete",
+                "Subnets": [
+                    {
+                        "SubnetIdentifier": "subnet-048bb35ce2916252d",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1a"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-0c824db3d36e086a8",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1b"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-0d090970de3f610e2",
+                        "SubnetAvailabilityZone": {
+                            "Name": "us-east-1c"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    }
+                ]
+            },
+            "PreferredMaintenanceWindow": "sun:04:55-sun:05:25",
+            "PendingModifiedValues": {},
+            "MultiAZ": false,
+            "EngineVersion": "1.4.5.1",
+            "AutoMinorVersionUpgrade": true,
+            "ReadReplicaDBInstanceIdentifiers": [],
+            "LicenseModel": "amazon-license",
+            "StorageThroughput": 0,
+            "OptionGroupMemberships": [
+                {
+                    "OptionGroupName": "default:neptune-1-4",
+                    "Status": "in-sync"
+                }
+            ],
+            "PubliclyAccessible": false,
+            "StorageType": "standard",
+            "DbInstancePort": 0,
+            "DBClusterIdentifier": "enterprise-rag-v2-prod-neptune",
+            "StorageEncrypted": true,
+            "KmsKeyId": "arn:aws:kms:us-east-1:963692744518:key/1d4744b0-f0cc-41a7-9f06-72948f6c93cd",
+            "DbiResourceId": "db-G62PQS2KGDMNSDMEXWBQMDQAIU",
+            "DomainMemberships": [],
+            "CopyTagsToSnapshot": false,
+            "MonitoringInterval": 0,
+            "PromotionTier": 0,
+            "DBInstanceArn": "arn:aws:rds:us-east-1:963692744518:db:enterprise-rag-v2-prod-neptune-instance-0",
+            "IAMDatabaseAuthenticationEnabled": false,
+            "PerformanceInsightsEnabled": false,
+            "DeletionProtection": false,
+            "AssociatedRoles": [],
+            "TagList": [
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-neptune-instance-0"
+                }
+            ],
+            "CustomerOwnedIpEnabled": false,
+            "NetworkType": "IPV4",
+            "BackupTarget": "region",
+            "DedicatedLogVolume": false
+        }
+    ]
+}

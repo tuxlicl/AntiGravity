@@ -1,0 +1,964 @@
+{
+    "Subnets": [
+        {
+            "AvailabilityZoneId": "use1-az4",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Tier",
+                    "Value": "public"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-public-us-east-1c"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-07a7e6dcd77bc564a",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-07a7e6dcd77bc564a",
+            "State": "available",
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "CidrBlock": "10.10.2.0/24",
+            "AvailableIpAddressCount": 250,
+            "AvailabilityZone": "us-east-1c",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": true
+        },
+        {
+            "AvailabilityZoneId": "use1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-public-us-east-1a"
+                },
+                {
+                    "Key": "Tier",
+                    "Value": "public"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0a80027c33ca46c04",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0a80027c33ca46c04",
+            "State": "available",
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "CidrBlock": "10.10.0.0/24",
+            "AvailableIpAddressCount": 247,
+            "AvailabilityZone": "us-east-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": true
+        },
+        {
+            "AvailabilityZoneId": "use1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Tier",
+                    "Value": "public"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-public-us-east-1a"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0f5894ba3a0b67fe9",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0f5894ba3a0b67fe9",
+            "State": "available",
+            "VpcId": "vpc-0bde04044d9620e99",
+            "CidrBlock": "10.10.0.0/24",
+            "AvailableIpAddressCount": 251,
+            "AvailabilityZone": "us-east-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": true
+        },
+        {
+            "AvailabilityZoneId": "use1-az4",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Tier",
+                    "Value": "public"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-public-us-east-1c"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0fc1368edfbc359f6",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0fc1368edfbc359f6",
+            "State": "available",
+            "VpcId": "vpc-0bde04044d9620e99",
+            "CidrBlock": "10.10.2.0/24",
+            "AvailableIpAddressCount": 251,
+            "AvailabilityZone": "us-east-1c",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": true
+        },
+        {
+            "AvailabilityZoneId": "use1-az2",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-public-us-east-1b"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                },
+                {
+                    "Key": "Tier",
+                    "Value": "public"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0f6486aed0fa0d327",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0f6486aed0fa0d327",
+            "State": "available",
+            "VpcId": "vpc-0bde04044d9620e99",
+            "CidrBlock": "10.10.1.0/24",
+            "AvailableIpAddressCount": 251,
+            "AvailabilityZone": "us-east-1b",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": true
+        },
+        {
+            "AvailabilityZoneId": "use1-az5",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-public-us-east-1f"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-007d872b77413d925",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-007d872b77413d925",
+            "State": "available",
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "CidrBlock": "10.10.4.0/24",
+            "AvailableIpAddressCount": 251,
+            "AvailabilityZone": "us-east-1f",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": true
+        },
+        {
+            "AvailabilityZoneId": "use1-az4",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-private-us-east-1c"
+                },
+                {
+                    "Key": "Tier",
+                    "Value": "private"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0d6b2054a58dcd81f",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0d6b2054a58dcd81f",
+            "State": "available",
+            "VpcId": "vpc-0bde04044d9620e99",
+            "CidrBlock": "10.10.12.0/24",
+            "AvailableIpAddressCount": 250,
+            "AvailabilityZone": "us-east-1c",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-scl1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Environment",
+                    "Value": "PRD"
+                },
+                {
+                    "Key": "Enterprise",
+                    "Value": "Chilquintas"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "Infraestructura TI "
+                },
+                {
+                    "Key": "Application",
+                    "Value": "Network"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-subnet-public1-us-east-1-scl-1a"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-033650891a7ed5186",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-033650891a7ed5186",
+            "State": "available",
+            "VpcId": "vpc-0afb203d35856fec8",
+            "CidrBlock": "10.20.2.0/28",
+            "AvailableIpAddressCount": 10,
+            "AvailabilityZone": "us-east-1-scl-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az2",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-subnet-public2-us-east-1b"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0a896d8f9f0047cb2",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0a896d8f9f0047cb2",
+            "State": "available",
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "CidrBlock": "10.20.0.16/28",
+            "AvailableIpAddressCount": 9,
+            "AvailabilityZone": "us-east-1b",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az2",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-subnet-private2-us-east-1b"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-03ed5f7d25cc6a13a",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-03ed5f7d25cc6a13a",
+            "State": "available",
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "CidrBlock": "10.20.0.144/28",
+            "AvailableIpAddressCount": 11,
+            "AvailabilityZone": "us-east-1b",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-scl1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Enterprise",
+                    "Value": "Chilquintas"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "Infraestructura TI "
+                },
+                {
+                    "Key": "Application",
+                    "Value": "Network"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "PRD"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-subnet-private2-us-east-1-scl-1a"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0c99bd7f559a5da21",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0c99bd7f559a5da21",
+            "State": "available",
+            "VpcId": "vpc-0afb203d35856fec8",
+            "CidrBlock": "10.20.2.144/28",
+            "AvailableIpAddressCount": 11,
+            "AvailabilityZone": "us-east-1-scl-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az6",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-public-us-east-1d"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0c242247bbac94472",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0c242247bbac94472",
+            "State": "available",
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "CidrBlock": "10.10.3.0/24",
+            "AvailableIpAddressCount": 251,
+            "AvailabilityZone": "us-east-1d",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": true
+        },
+        {
+            "AvailabilityZoneId": "use1-scl1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-subnet-private1-us-east-1-scl-1a"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "Infraestructura TI "
+                },
+                {
+                    "Key": "Enterprise",
+                    "Value": "Chilquintas"
+                },
+                {
+                    "Key": "Application",
+                    "Value": "Network"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "PRD"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-05783001573689545",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-05783001573689545",
+            "State": "available",
+            "VpcId": "vpc-0afb203d35856fec8",
+            "CidrBlock": "10.20.2.128/28",
+            "AvailableIpAddressCount": 11,
+            "AvailabilityZone": "us-east-1-scl-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az4",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Tier",
+                    "Value": "private"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-private-us-east-1c"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0d090970de3f610e2",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0d090970de3f610e2",
+            "State": "available",
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "CidrBlock": "10.10.12.0/24",
+            "AvailableIpAddressCount": 249,
+            "AvailabilityZone": "us-east-1c",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Tier",
+                    "Value": "private"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-private-us-east-1a"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0e932ab0a29211c96",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0e932ab0a29211c96",
+            "State": "available",
+            "VpcId": "vpc-0bde04044d9620e99",
+            "CidrBlock": "10.10.10.0/24",
+            "AvailableIpAddressCount": 250,
+            "AvailabilityZone": "us-east-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az2",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-private-us-east-1b"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Tier",
+                    "Value": "private"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0c824db3d36e086a8",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0c824db3d36e086a8",
+            "State": "available",
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "CidrBlock": "10.10.11.0/24",
+            "AvailableIpAddressCount": 247,
+            "AvailabilityZone": "us-east-1b",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-subnet-public1-us-east-1a"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0d72f57f95ab1d9e9",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0d72f57f95ab1d9e9",
+            "State": "available",
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "CidrBlock": "10.20.0.0/28",
+            "AvailableIpAddressCount": 9,
+            "AvailabilityZone": "us-east-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az2",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Tier",
+                    "Value": "public"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-public-us-east-1b"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-096d4488adb6ed311",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-096d4488adb6ed311",
+            "State": "available",
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "CidrBlock": "10.10.1.0/24",
+            "AvailableIpAddressCount": 251,
+            "AvailabilityZone": "us-east-1b",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": true
+        },
+        {
+            "AvailabilityZoneId": "use1-az2",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Tier",
+                    "Value": "private"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-private-us-east-1b"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0ca2ccd689187e74e",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0ca2ccd689187e74e",
+            "State": "available",
+            "VpcId": "vpc-0bde04044d9620e99",
+            "CidrBlock": "10.10.11.0/24",
+            "AvailableIpAddressCount": 250,
+            "AvailabilityZone": "us-east-1b",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-private-us-east-1a"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Tier",
+                    "Value": "private"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-048bb35ce2916252d",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-048bb35ce2916252d",
+            "State": "available",
+            "VpcId": "vpc-0b6d1a271aed23d7d",
+            "CidrBlock": "10.10.10.0/24",
+            "AvailableIpAddressCount": 249,
+            "AvailabilityZone": "us-east-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "use1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "963692744518",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "VPC_PRD_CHQTA_SCL-subnet-private1-us-east-1a"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:963692744518:subnet/subnet-0312c47cf3d0d5f45",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0312c47cf3d0d5f45",
+            "State": "available",
+            "VpcId": "vpc-0927f73fae018a1ce",
+            "CidrBlock": "10.20.0.128/28",
+            "AvailableIpAddressCount": 11,
+            "AvailabilityZone": "us-east-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+{
+    "Addresses": [
+        {
+            "AllocationId": "eipalloc-0d36731b0c9aa3014",
+            "AssociationId": "eipassoc-09f20a3c985908cba",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-08f44630be2b2b563",
+            "NetworkInterfaceOwnerId": "963692744518",
+            "PrivateIpAddress": "10.10.0.99",
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag-v2"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-v2-prod-nat-eip-0"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                }
+            ],
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "us-east-1",
+            "PublicIp": "100.52.42.189"
+        },
+        {
+            "AllocationId": "eipalloc-0ff51a9ae0a8bf267",
+            "AssociationId": "eipassoc-0f8e945808f5055e6",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-0d682fe246436b48d",
+            "NetworkInterfaceOwnerId": "963692744518",
+            "PrivateIpAddress": "10.20.2.13",
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "us-east-1-scl-1",
+            "InstanceId": "i-0501aef2a748d34b7",
+            "PublicIp": "13.128.249.246"
+        },
+        {
+            "AllocationId": "eipalloc-075326c1ad1c81a4a",
+            "Domain": "vpc",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-nat-eip-2"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                }
+            ],
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "us-east-1",
+            "PublicIp": "3.230.111.99"
+        },
+        {
+            "AllocationId": "eipalloc-098ef7c417036231b",
+            "Domain": "vpc",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "enterprise-rag-prod-nat-eip-1"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "prod"
+                },
+                {
+                    "Key": "Owner",
+                    "Value": "platform-team"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "enterprise-rag"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                }
+            ],
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "us-east-1",
+            "PublicIp": "34.232.36.196"
+        }
+    ]
+}
