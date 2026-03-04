@@ -1,0 +1,84 @@
+Title
+Palo Alto Config Backup → Full Configuration Inventory + Architecture Schema + VPN (Site-to-Site) Diagram
+
+Context
+You are operating under the active skill: paloalto_networks_godmode_architect.
+I will provide a Palo Alto Networks configuration export (XML) from a firewall or Panorama. Your job is to parse it and produce a complete, human-readable architecture description of EVERYTHING configured, including a diagram for key components (especially Site-to-Site VPN). The output will be used for documentation, troubleshooting, and migration planning.
+
+Task
+1) Identify the config type and scope:
+   - Determine if the file is firewall vs Panorama, and if it is running-config vs candidate-config vs named snapshot.
+   - Determine if it is standalone vs HA-managed vs Panorama-managed, and list the relevant hints found in the config.
+
+2) Produce a comprehensive configuration inventory (structured):
+   A) Device & system
+      - hostname, management settings (non-sensitive), admins (redacted), auth profile types, NTP/DNS, certificates (metadata only), licensing/features referenced
+   B) Interfaces & zones
+      - physical interfaces, subinterfaces, VLANs, AE/LACP, loopbacks, tunnel interfaces, management interface usage
+      - zone mappings, virtual routers, vsys presence
+   C) Routing
+      - static routes, OSPF, BGP, RIP (if any), PBF, ECMP, redistribution policies, VR topology
+   D) Objects
+      - address objects, address groups, service objects, service groups, tags
+      - URL categories, EDLs (external dynamic lists), application overrides/custom apps
+   E) NAT
+      - NAT rules: source NAT, destination NAT, U-Turn NAT, NAT pools, rule ordering implications
+   F) Security policy
+      - rulebase overview: top rules summary + key allows/denies
+      - identify policy posture (least privilege vs broad allow), rule shadowing, unused objects (best-effort)
+   G) Threat prevention & profiles
+      - security profiles, profile groups, vulnerability, anti-spyware, antivirus, wildfire, URL filtering, file blocking, DNS security (if any)
+   H) Decryption
+      - SSL forward proxy / inbound inspection rules, exclusions, cert references (no private key material)
+   I) VPN
+      - Site-to-Site IPsec: IKE gateways, crypto profiles, tunnel interfaces, proxy-IDs (policy-based) or route-based config
+      - GlobalProtect: portal/gateway settings if present (high-level)
+   J) Authentication / User-ID
+      - user-id agent, group mapping, LDAP/AD integration (metadata only), syslog forwarding for user-id (if any)
+   K) Logging / monitoring
+      - log forwarding profiles, syslog servers, SNMP, email profiles, reporting (metadata only)
+   L) HA (if present)
+      - HA mode, peers (redacted), HA1/HA2 links, path monitoring, election settings (high-level)
+   M) Panorama (if present)
+      - device groups, templates, template stacks, pushed rulebases, overrides and local rules
+
+3) Generate diagrams (Mermaid format):
+   - Diagram 1: High-level topology (zones, key interfaces, VRs, major network segments, external links)
+   - Diagram 2: Site-to-Site VPN diagram (IKE GW ↔ peer, IPsec tunnel, tunnel interface, proxy-IDs or route-based routes, interesting traffic)
+   - Diagram 3 (optional if applicable): HA or Panorama management relationships
+
+4) Produce a “migration notes” section:
+   - highlight version-sensitive constructs (PAN-OS differences if detectable)
+   - list potential issues: asymmetric routing, missing security profiles, overly broad rules, NAT order risks, weak crypto (if present)
+   - provide a small validation checklist to confirm the diagram matches reality (what to check in GUI/CLI)
+
+External Knowledge Requirement (Mandatory)
+Whenever you reference PAN-OS behavior, CLI commands, feature semantics, or crypto defaults that may vary by PAN-OS version, you MUST consult authoritative external sources (Palo Alto docs / KB / LiveCommunity / relevant RFC) and cite them inline in your own reasoning notes. If the environment does not allow live browsing, explicitly label those items as “Needs external verification” and list exact search queries to run.
+
+Constraints
+- Do not output sensitive secrets. Redact: PSKs, private keys, API keys, passwords, full public IPs if requested. Keep only metadata.
+- Do not invent configuration details not present in the provided file.
+- If the config is incomplete or missing referenced objects, flag gaps clearly.
+- Prefer accuracy over speculation.
+
+Files to Inspect / Request
+- The Palo Alto configuration export file path (XML or tgz).
+- If there are multiple vsys or Panorama templates/device-groups, request which scope to prioritize only if strictly necessary; otherwise do best-effort for everything.
+
+Output Format
+1) Quick Summary (10–20 bullets)
+2) Full Inventory (sections A–M)
+3) Diagrams (Mermaid code blocks)
+4) Findings & Risks (prioritized)
+5) Migration Notes
+6) Validation Checklist
+7) “Needs External Verification” (if any) + exact search queries
+
+Reasoning Depth (NZT-48 Toggle)
+NZT-48: ON (maximum rigor, cross-check consistency, no hallucinations)
+
+Validation / Self-Check
+- Confirm every listed item is grounded in the config.
+- Confirm VPN diagram includes peer, IKE, IPsec, tunnel interface, routing/proxy-IDs, and interesting traffic.
+- Confirm no sensitive secrets are exposed.
+- Confirm diagrams are syntactically valid Mermaid.
