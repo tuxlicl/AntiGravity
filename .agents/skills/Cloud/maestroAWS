@@ -1,0 +1,100 @@
+Title
+AWS Infrastructure Analyzer → Inventory + Diagrams + Well-Architected Review + Security + FinOps + Remediation Plan
+
+Context
+You are operating under the active skill: aws_hyper_ultimate_architect.
+I will provide an AWS infrastructure codebase and/or exports (Terraform / CloudFormation / CDK outputs / account structure notes).
+Your job is to analyze the infrastructure end-to-end and produce a complete architecture understanding, diagrams, and actionable improvements.
+
+Task
+1) Determine the infrastructure definition scope:
+   - Identify IaC type(s): Terraform, CloudFormation, CDK, SAM, Serverless Framework, raw AWS CLI scripts.
+   - Identify environments: dev/stage/prod, regions, accounts, and whether this is multi-account (Organizations/Control Tower).
+   - Identify modules/stacks boundaries and ownership areas.
+
+2) Build a comprehensive inventory (grounded in code/files):
+   A) Accounts & governance
+      - AWS Organizations structure (if present), SCPs, OU layout, Control Tower baseline assumptions
+      - IAM Identity Center (SSO) presence, account vending, guardrails
+   B) Identity & access
+      - IAM users/roles/policies (principle-of-least-privilege assessment)
+      - trust policies, cross-account access patterns
+      - secrets: Secrets Manager/SSM Parameter Store usage (metadata only, no secret values)
+   C) Networking
+      - VPCs, subnets, route tables, IGW/NAT, TGW, VPC peering, PrivateLink
+      - on-prem connectivity: VPN/DX (as inferred)
+      - DNS: Route53 zones, resolver rules (if present)
+   D) Edge & traffic management
+      - CloudFront, ALB/NLB, API Gateway, WAF, Shield, Global Accelerator
+   E) Compute & orchestration
+      - EC2/ASG, ECS/EKS/Fargate, Lambda, Batch, App Runner, Step Functions
+      - deployment patterns: blue/green, canary, rolling
+   F) Data & storage
+      - S3 buckets posture (encryption, public access blocks), EBS/EFS/FSx
+      - RDS/Aurora/DynamoDB/Redshift/ElastiCache/Neptune etc.
+      - backup posture: AWS Backup, snapshots, PITR, cross-region replication
+   G) Observability & audit
+      - CloudWatch (logs/metrics/alarms), X-Ray, OpenTelemetry (if present)
+      - CloudTrail org trails, Config, log archives
+   H) Security services & posture
+      - GuardDuty, Security Hub, Inspector, Macie, Detective
+      - KMS key strategy, rotation, encryption coverage
+      - incident response readiness & logging immutability
+   I) CI/CD & IaC pipelines
+      - CodePipeline/CodeBuild/CodeDeploy, GitHub Actions, Terraform workflows
+      - drift detection approach
+   J) Cost & FinOps signals
+      - tagging strategy, cost allocation, Savings Plans/RI/Spot usage, S3 lifecycle
+      - high-cost services and likely waste (best-effort based on architecture)
+   K) Resilience & DR
+      - multi-AZ patterns, multi-region strategy, RTO/RPO, failover mechanisms
+
+3) Produce diagrams in Mermaid:
+   - Diagram 1: High-level system architecture (edge → networking → compute → data)
+   - Diagram 2: Networking topology (VPCs/subnets/TGW/peering/PrivateLink)
+   - Diagram 3: Security & governance (accounts/OUs/SCP/log archive/security tooling)
+   - Diagram 4 (optional): Data platform flow (ingest → storage → processing → analytics)
+
+4) Run a Well-Architected style review:
+   - For each pillar (Ops Excellence, Security, Reliability, Performance, Cost, Sustainability):
+     - 3–8 key findings (prioritized)
+     - recommended remediation actions
+     - expected tradeoffs
+
+5) Output a prioritized remediation plan:
+   - P0 (critical security/reliability), P1, P2 improvements
+   - include “quick wins” and “bigger refactors”
+   - include a validation checklist and how to test changes safely
+
+External Knowledge Requirement (Mandatory)
+When referencing AWS service limits, defaults, security recommendations, pricing model behaviors, or best practices that may change, consult authoritative external sources (AWS docs, AWS whitepapers, AWS blog, AWS Well-Architected, or official GitHub repos) and cite them in reasoning notes. If browsing is not available, label items as “Needs external verification” and list exact search queries to run.
+
+Constraints
+- Do not invent resources not present in the provided files.
+- Do not expose secrets. Redact any sensitive values found.
+- Prefer accuracy over speculation. Clearly label assumptions.
+- Provide actionable outputs: diagrams + checklist + plan.
+- Keep outputs compatible with both small and enterprise setups.
+
+Files to Inspect / Request
+- Provide the repository paths that contain IaC (e.g., infra/terraform, modules, stacks).
+- Optional: exports (terraform plan output, tfstate (sanitized), CloudTrail/SecurityHub findings export, account OU notes).
+
+Output Format
+1) Quick Summary (10–25 bullets)
+2) Full Inventory (sections A–K)
+3) Diagrams (Mermaid code blocks)
+4) Well-Architected Findings (by pillar)
+5) Risk Register (Security/Availability/Cost) prioritized
+6) Remediation Plan (P0/P1/P2) with effort sizing
+7) Validation Checklist
+8) Needs External Verification (if any) + exact search queries
+
+Reasoning Depth (NZT-48 Toggle)
+NZT-48: ON (maximum rigor, consistency checks, no hallucinations)
+
+Validation / Self-Check
+- Confirm every inventory item is grounded in repo files or clearly marked as an assumption.
+- Confirm diagrams represent the described components and relationships.
+- Confirm no secret material is exposed.
+- Confirm remediation plan is actionable and prioritized.
