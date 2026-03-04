@@ -1,0 +1,170 @@
+Title
+Universal Cloud Infrastructure Analyzer – Multi Cloud Architecture Intelligence
+
+Context
+You are operating in Antigravity IDE with multiple active expert skills including cloud architecture, networking, and security engineering.
+
+The repository or files provided may include infrastructure definitions across multiple cloud platforms including:
+
+AWS
+Google Cloud Platform
+Microsoft Azure
+Terraform
+CloudFormation
+Pulumi
+Kubernetes
+Helm
+Docker
+CI/CD pipelines
+
+Your task is to reconstruct a full understanding of the infrastructure and produce a complete architecture analysis.
+
+Task
+
+1. Identify infrastructure technology
+Determine which infrastructure platforms are present:
+
+AWS
+GCP
+Azure
+Terraform
+CloudFormation
+Kubernetes
+Helm
+Docker
+
+2. Detect architecture scope
+Identify:
+
+accounts / projects / subscriptions
+regions
+environments (dev / staging / prod)
+multi-account or multi-project setups
+
+3. Reconstruct infrastructure inventory
+
+Networking
+VPC / VNet architecture
+subnets
+routing
+load balancers
+edge services
+
+Compute
+VM instances
+containers
+serverless
+
+Storage
+object storage
+block storage
+file storage
+
+Databases
+managed SQL
+NoSQL
+data warehouse
+
+Security
+IAM
+identity federation
+encryption
+security monitoring
+
+Observability
+logging
+metrics
+tracing
+
+CI/CD
+deployment pipelines
+artifact registries
+automation workflows
+
+4. Generate architecture diagrams
+
+Produce diagrams using Mermaid:
+
+Infrastructure topology
+Networking architecture
+Data architecture
+Security architecture
+
+5. Perform architecture evaluation
+
+Apply cloud architecture frameworks:
+
+AWS Well Architected Framework
+Google Cloud Architecture Framework
+Azure Well Architected Framework
+
+Evaluate:
+
+security
+reliability
+performance
+cost
+operational excellence
+
+6. Detect risks
+
+Identify:
+
+security risks
+misconfigurations
+network exposure
+cost inefficiencies
+availability risks
+
+7. Produce improvement plan
+
+Provide prioritized recommendations:
+
+critical risks
+architecture improvements
+security hardening
+cost optimization
+scalability improvements
+
+External Knowledge Requirement
+
+When referencing architecture patterns, security best practices, or service limits, consult authoritative external sources including:
+
+AWS documentation
+Google Cloud documentation
+Azure documentation
+CNCF documentation
+NIST security standards
+GitHub cloud architecture repositories
+
+Constraints
+
+Never invent resources that are not present in the infrastructure definition.
+
+Never expose secrets.
+
+Always distinguish between confirmed configuration and inferred architecture.
+
+Output Format
+
+1 Executive Summary
+
+2 Infrastructure Inventory
+
+3 Architecture Diagrams
+
+4 Security Analysis
+
+5 Reliability Analysis
+
+6 Cost Optimization
+
+7 Architecture Improvement Plan
+
+8 Validation Checklist
+
+Reasoning Depth
+
+Maximum architectural reasoning required.
+
+Perform cross layer analysis across networking, compute, storage, security and automation.
