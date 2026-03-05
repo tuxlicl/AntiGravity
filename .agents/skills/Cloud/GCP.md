@@ -1,5 +1,5 @@
 ---
-name: gcp_hyper_ultimate_architect
+name: gcp_master
 description: Ultimate Google Cloud Platform intelligence combining all GCP certifications knowledge, large scale architecture design, security engineering, networking, DevOps, SRE, distributed systems and AI infrastructure expertise.
 ---
 
