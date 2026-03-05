@@ -1,0 +1,182 @@
+Título
+Analizador Completo de Tenant Microsoft 365 + Azure
+
+Contexto
+
+Estás operando dentro de Antigravity IDE utilizando el skill experto en Microsoft 365 y Azure.
+
+El objetivo es analizar completamente el tenant para reconstruir la arquitectura, evaluar la seguridad y generar un informe técnico detallado.
+
+El análisis debe cubrir:
+
+Entra ID (Azure AD)
+Exchange Online
+SharePoint Online
+OneDrive
+Microsoft Teams
+Microsoft Defender
+Microsoft Purview
+Intune / Endpoint Manager
+Azure Governance
+
+Tareas
+
+1. Identificar estructura del tenant
+
+Detectar:
+
+tenant id
+dominios
+regiones
+tipo de cloud (commercial / gcc / gov)
+licenciamiento aproximado
+
+2. Reconstruir inventario de identidad
+
+Usuarios
+grupos
+roles administrativos
+roles privilegiados
+administradores globales
+aplicaciones registradas
+service principals
+permisos de aplicaciones
+
+3. Analizar autenticación
+
+MFA
+Conditional Access
+Identity Protection
+Authentication Methods
+
+Detectar:
+
+usuarios sin MFA
+políticas CA incompletas
+autenticación legacy habilitada
+riesgos de identidad
+
+4. Analizar colaboración y datos
+
+Exchange Online
+
+mail flow
+transport rules
+DKIM / SPF / DMARC
+forwarding policies
+
+SharePoint / OneDrive
+
+políticas de sharing
+acceso externo
+permisos
+
+Teams
+
+políticas de Teams
+acceso externo
+guest access
+
+5. Analizar seguridad
+
+Microsoft Defender
+
+antiphishing
+safe links
+safe attachments
+alertas
+
+Security Score
+
+riesgos detectados
+controles faltantes
+
+6. Analizar compliance
+
+Microsoft Purview
+
+DLP
+retención
+sensibilidad
+eDiscovery
+auditoría
+
+7. Analizar dispositivos
+
+Intune
+
+políticas de cumplimiento
+dispositivos registrados
+control de acceso condicional por dispositivo
+
+8. Analizar Azure
+
+Management Groups
+Subscriptions
+RBAC
+Azure Policies
+Governance
+
+9. Generar diagramas
+
+Generar diagramas Mermaid para:
+
+arquitectura de identidad
+flujo de correo
+gobernanza de datos
+arquitectura de seguridad
+estructura Azure
+
+10. Detectar riesgos
+
+Identificar:
+
+configuraciones inseguras
+exposición de datos
+roles excesivos
+apps con permisos peligrosos
+usuarios privilegiados
+
+11. Generar plan de mejora
+
+Crear recomendaciones priorizadas:
+
+P0 riesgos críticos
+P1 mejoras importantes
+P2 optimizaciones
+
+Fuentes externas obligatorias
+
+Cuando se mencionen configuraciones o buenas prácticas, consultar documentación oficial:
+
+Microsoft Learn
+Microsoft Graph documentation
+Microsoft Defender documentation
+Microsoft Purview documentation
+Azure architecture center
+
+Restricciones
+
+No inventar configuraciones que no estén confirmadas.
+
+No exponer secretos.
+
+Diferenciar claramente entre configuraciones confirmadas e inferencias.
+
+Formato de salida
+
+1. Resumen ejecutivo
+2. Inventario completo
+3. Diagramas de arquitectura
+4. Análisis de seguridad
+5. Análisis de compliance
+6. Evaluación Zero Trust
+7. Riesgos detectados
+8. Plan de remediación
+9. Checklist de validación
+
+Nivel de razonamiento
+
+Máximo nivel de análisis arquitectónico.
+
+Realizar correlación entre identidad, seguridad, colaboración, dispositivos y gobernanza.
