@@ -1,5 +1,5 @@
 ---
-name: powershell_master
+name: powershell
 description: Especialista Senior en PowerShell para administración, automatización y auditoría en entornos Windows.
 ---
 
