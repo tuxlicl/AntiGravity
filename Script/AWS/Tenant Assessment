@@ -1,0 +1,114 @@
+# Microsoft 365 & Azure Architecture & Security Assessment
+
+**Tenant Name:** chilquinta.cl
+**Country:** CL
+**Tenant ID:** 5f8f1b31-5fca-45ff-958c-f12d69200314
+
+---
+
+## 1. Executive Summary
+This document presents the architectural layout and security posture of the Microsoft 365 and Azure environment for `chilquinta.cl`. Based on the automated read-only telemetry extraction, the environment serves **4,777 total users (3,932 active)**, alongside 473 guests and 139 registered applications. 
+
+The environment demonstrates a relatively mature stance with active Azure Subscriptions and multiple verified custom domains for various corporate entities. However, the Conditional Access structure relies heavily on geo-exceptions, and some key Zero-Trust recommendations remain disabled.
+
+## 2. Environment Architecture & Diagrams
+
+### 2.1 Identity Flow Architecture (Entra ID)
+```mermaid
+graph TD
+    A[Users: 3,932 Active] -->|Authentication| B(Entra ID: chilquinta.cl)
+    G[Guest Users: 473] -->|B2B Guest Access| B
+    
+    B --> C{Conditional Access Policies}
+    
+    C -->|Block| D[Risky Sign-ins]
+    C -->|Block| E[Untrusted Locations]
+    C -->|Block| F[Legacy Auth]
+    
+    C -->|Allow w/ MFA| H[Corporate Apps]
+    C -->|Allow w/o MFA| I[Geo-Exceptions: Peru, Argentina, etc.]
+    
+    H --> J[139 Registered Apps]
+    H --> K[M365 Workloads]
+    H --> L[Azure Subscriptions]
+```
+
+### 2.2 Mail Flow Architecture (Exchange Online)
+```mermaid
+graph LR
+    A((Internet Mail)) --> B{Exchange Online Protection}
+    B --> C[32 Transport Rules]
+    C --> D[chilquinta.cl Route]
+    C --> E[tecnored.cl Route]
+    C --> F[casablanca.cl Route]
+    C --> G[Other 26 Domains...]
+```
+
+### 2.3 Azure Governance 
+```mermaid
+graph TD
+    A[chilquinta.cl Root] --> B[Azure Subscription OLD: 180730fd]
+    A --> C[Azure PRD: d5c26b7e]
+    
+    B -.->|Legacy Workloads| D(Decommissioning/Review Target)
+    C -->|Active Workloads| E(Production Infrastructure)
+```
+
+## 3. Inventory Summary
+
+- **Total Domains:** 29 (including default `.onmicrosoft.com` domains)
+- **Active User Identities:** 3,932
+- **Guest Identities:** 473
+- **App Registrations:** 139
+- **Azure Subscriptions:** 2 (`Azure PRD`, `Azure subscription OLD`)
+- **Exchange Config:** 32 active Transport Rules across all accepted domains.
+
+## 4. Security & Zero-Trust Analysis
+
+### Conditional Access Evaluation
+The tenant enforces structural Conditional Access (CA) effectively but introduces high risk via extensive geographic exceptions:
+
+**Strong Controls Found:**
+- `Block legacy authentication` (Enabled)
+- `Block Risky Sign-In` (Enabled)
+- `Require multifactor authentication for admins` (Enabled)
+- `Block Sign-In From Un-Trusted Locations` (Enabled)
+
+**Weaknesses / Exceptions (High Risk):**
+There is a massive reliance on country-based exceptions (`Excepcion Canada`, `Excepcion Venezuela`, `Excepcion Peru`, `Excepcion Argentina`, `Excepcion Mexico`, `Excepcion Francia`, etc.). 
+*Risk:* If attackers route their requests through VPNs located in "Allow-listed" countries, they bypass geo-blocking entirely. Reliance on geo-fencing instead of Identity Protection / Context-based MFA is a non-Zero Trust pattern.
+
+**Disabled / Missing Controls:**
+- `Microsoft-managed: Require phishing-resistant multifactor authentication for admins` is **Disabled**.
+- `MFA_GRUPO` is **Disabled** (possibly deprecated in favor of `MFA_Corporativo`).
+
+## 5. Risk Assessment & Findings
+
+### [P0 - Critical] Over-exposure via Geo-Exceptions
+- **Issue:** The tenant has 13+ enabled CA policies simply named `Excepcion [País]`. 
+- **Impact:** Attackers routinely use localized proxies/VPN networks. If a credential gets phished, Geo-Exceptions provide a clear bypass mechanism.
+- **Recommendation:** Consolidate geo-exceptions. Move toward **Risk-Based Access** (Identity Protection) requiring MFA universally, rather than trusting regions blindly.
+
+### [P1 - High] Lack of Phishing-Resistant MFA for Admins
+- **Issue:** Microsoft-managed policy for phishing-resistant MFA (FIDO2) is currently disabled.
+- **Impact:** Global Admins and Privileged roles remain susceptible to AiTM (Attacker-in-the-Middle) phishing proxies.
+- **Recommendation:** Enforce FIDO2 keys or Windows Hello for Business exclusively for Privileged Roles.
+
+### [P2 - Medium] "Azure subscription OLD" Governance
+- **Issue:** An active subscription literal named `OLD` exists.
+- **Impact:** Stale subscriptions often accumulate unpatched orphaned VMs, overly permissive Service Principals, and unwanted costs.
+- **Recommendation:** Conduct a resource sweep on `180730fd-0901-462a-bf76-35ff6707a445` and securely decommission the subscription if inactive.
+
+## 6. Remediation Plan
+
+**Phase 1: Secure the Perimeter (Next 14 Days)**
+1. Enable `Phishing-resistant MFA for Admins` policy.
+2. Review the necessity of all `Excepcion [Pais]` CA policies. Transition users to standard MFA workflows instead of blanket geo-allows. 
+
+**Phase 2: Governance Cleanup (Next 30 Days)**
+3. Audit the `139 Application Registrations` for stale credentials or overly permissive Graph API scopes.
+4. Review the `Azure subscription OLD` resources using Azure Resource Graph.
+
+**Phase 3: Deep Security Posture (Next 90 Days)**
+5. Implement Microsoft Purview DLP capabilities (requires further context extraction).
+6. Migrate any remaining Conditional Access logic toward strict Identity Protection (user/sign-in risk integration).
