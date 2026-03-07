@@ -1,5 +1,5 @@
 ---
-name: paloalto_full
+name: paloalto
 description: Ultimate Palo Alto Networks and Network Security Architect skill with extreme expertise in PAN-OS internals, enterprise network architecture, threat hunting, protocol analysis, firewall troubleshooting, and security automation.
 ---
 
