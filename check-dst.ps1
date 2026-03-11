@@ -1,107 +1,64 @@
-<#
-.SYNOPSIS
-    Valida la configuración de Horario de Verano (DST) y las próximas transiciones.
-.DESCRIPTION
-    Este script analiza la zona horaria del sistema, verifica si el ajuste automático está habilitado 
-    en el registro y calcula las fechas exactas del próximo cambio de hora (invierno/verano).
-    Ideal para entornos OT donde la interfaz gráfica puede estar restringida o no mostrar info detallada.
-.EXAMPLE
-    .\Get-NextDSTTransition.ps1
-#>
+# --- CONFIGURACIÓN ---
+$FixRules = $true # Ponlo en $true para aplicar el arreglo a abril 2026
 
-[CmdletBinding()]
-param()
+try {
+    Clear-Host
+    Write-Host "=========================================================" -ForegroundColor Cyan
+    Write-Host "--- Verificación y Arreglo de Tiempo (Chile 2026) ---" -ForegroundColor Cyan
+    Write-Host "=========================================================" -ForegroundColor Cyan
+    
+    $tz = [System.TimeZoneInfo]::Local
+    $now = Get-Date
+    $y = $now.Year
+    $rules = $tz.GetAdjustmentRules()
+    $currentRule = $rules | Where-Object { $_.DateStart.Year -le $y -and $_.DateEnd.Year -ge $y }
 
-Process {
-    try {
-        Write-Host "--- Verificación de Configuración de Tiempo (Red OT/SCADA) ---" -ForegroundColor Cyan
-        
-        # 1. Obtener Info de Zona Horaria Actual
-        $tz = [System.TimeZoneInfo]::Local
-        $now = Get-Date
+    Write-Host "`n[+] Configuración Actual:"
+    Write-Host "    - ID Zona Horaria:   $($tz.Id)"
+    Write-Host "    - Nombre:            $($tz.DisplayName)"
+    Write-Host "    - Fecha/Hora Local:  $($now.ToString('dd/MM/yyyy HH:mm:ss'))"
+    Write-Host "    - Offset UTC Actual: $($tz.GetUtcOffset($now).TotalHours) horas"
 
-        Write-Host "`n[+] Información del Sistema:"
-        Write-Host "    - Zona Horaria Actual: $($tz.DisplayName)"
-        Write-Host "    - Fecha/Hora Actual:   $($now.ToString('dd/MM/yyyy HH:mm:ss'))"
-        Write-Host "    - Ajuste DST Activo:   $($tz.IsDaylightSavingTime($now))"
-        Write-Host "    - Offset UTC Actual:   $($tz.GetUtcOffset($now).TotalHours) horas"
+    if ($null -ne $currentRule) {
+        # Función para calcular fechas de transición
+        function Get-TransitionDate($t, $yearVal) {
+            if ($t.IsFixedDateRule) { return Get-Date -Year $yearVal -Month $t.Month -Day $t.Day -Hour $t.TimeOfDay.Hour -Minute $t.TimeOfDay.Minute -Second 0 }
+            $d = Get-Date -Year $yearVal -Month $t.Month -Day 1
+            while ($d.DayOfWeek -ne $t.DayOfWeek) { $d = $d.AddDays(1) }
+            $res = $d.AddDays(($t.Week - 1) * 7)
+            if ($res.Month -ne $t.Month) { $res = $res.AddDays(-7) }
+            return $res.AddHours($t.TimeOfDay.Hour).AddMinutes($t.TimeOfDay.Minute)
+        }
 
-        # 2. Verificar Registro de Windows (DynamicDaylightTimeDisabled)
-        # 0 = Habilitado (Cambia solo), 1 = Deshabilitado (No cambia)
-        $regPath = "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation"
-        $dstDisabled = Get-ItemProperty -Path $regPath -Name "DynamicDaylightTimeDisabled" -ErrorAction SilentlyContinue
-        
-        Write-Host "`n[+] Estado del Registro de Windows:"
-        if ($null -ne $dstDisabled) {
-            $status = if ($dstDisabled.DynamicDaylightTimeDisabled -eq 1) { "DESHABILITADO (No cambiará automáticamente)" } else { "HABILITADO (Cambiará automáticamente)" }
-            $color = if ($dstDisabled.DynamicDaylightTimeDisabled -eq 1) { "Yellow" } else { "Green" }
-            Write-Host "    - Ajuste Automático: $status" -ForegroundColor $color
+        # En Chile: abril es el fin de verano (atrasa reloj) y sept/oct es el inicio (adelanta reloj)
+        $winterStart = Get-TransitionDate $currentRule.DaylightTransitionEnd $y
+        $summerStart = Get-TransitionDate $currentRule.DaylightTransitionStart $y
+
+        Write-Host "`n[+] Reglas en el sistema para el año ${y}:" -ForegroundColor White
+        Write-Host "    - Inicio INVIERNO (UTC-4): $($winterStart.ToString('dddd, dd MMMM yyyy HH:mm'))"
+        Write-Host "    - Inicio VERANO   (UTC-3): $($summerStart.ToString('dddd, dd MMMM yyyy HH:mm'))"
+
+        if ($winterStart.Month -ne 4) {
+            Write-Host "`n[!] ALERTA: El cambio a invierno NO está en Abril (Muestra mes $($winterStart.Month))." -ForegroundColor Red
         }
         else {
-            Write-Host "    - Ajuste Automático: No se encontró la llave de registro (valor por defecto es Habilitado)."
+            Write-Host "`n[OK] El cambio de invierno está correctamente en Abril." -ForegroundColor Green
         }
-
-        # 3. Calcular Próximas Transiciones
-        Write-Host "`n[+] Próximos Cambios Programados (Reglas de Sistema):"
-        $rules = $tz.GetAdjustmentRules()
-        $year = $now.Year
-
-        # Filtrar reglas para el año actual
-        $currentRule = $rules | Where-Object { $_.DateStart.Year -le $year -and $_.DateEnd.Year -ge $year }
-
-        if ($null -eq $currentRule) {
-            Write-Host "    [!] No se encontraron reglas de transición para el año $year." -ForegroundColor Red
-        }
-        else {
-            # Función local para convertir reglas relativas a fechas fijas
-            function Get-TransitionDate($transition, $year) {
-                if ($transition.IsFixedDateRule) {
-                    return Get-Date -Year $year -Month $transition.Month -Day $transition.Day -Hour $transition.TimeOfDay.Hour -Minute $transition.TimeOfDay.Minute -Second 0
-                }
-                else {
-                    $firstDayOfMonth = Get-Date -Year $year -Month $transition.Month -Day 1
-                    $dayOfWeek = $transition.DayOfWeek
-                    $weekInMonth = $transition.Week # 5 significa la última semana
-                    
-                    $targetDay = $firstDayOfMonth
-                    while ($targetDay.DayOfWeek -ne $dayOfWeek) {
-                        $targetDay = $targetDay.AddDays(1)
-                    }
-                    
-                    $transitionDate = $targetDay.AddDays(($weekInMonth - 1) * 7)
-                    
-                    # Si calculamos la 5ta semana y nos pasamos de mes, volver 7 días
-                    if ($transitionDate.Month -ne $transition.Month) {
-                        $transitionDate = $transitionDate.AddDays(-7)
-                    }
-                    
-                    return $transitionDate.AddHours($transition.TimeOfDay.Hour).AddMinutes($transition.TimeOfDay.Minute)
-                }
-            }
-
-            $dstStart = Get-TransitionDate $currentRule.DaylightTransitionStart $year
-            $dstEnd = Get-TransitionDate $currentRule.DaylightTransitionEnd $year
-
-            # Determinar cuál es la siguiente
-            if ($now -lt $dstEnd -and $now -gt $dstStart) {
-                Write-Host "    - Próximo cambio (Invierno): $($dstEnd.ToString('dddd, dd MMMM yyyy HH:mm'))" -ForegroundColor Cyan
-                Write-Host "      (El reloj se atrasará 1 hora)"
-            }
-            elseif ($now -lt $dstStart) {
-                Write-Host "    - Próximo cambio (Verano):   $($dstStart.ToString('dddd, dd MMMM yyyy HH:mm'))" -ForegroundColor Cyan
-                Write-Host "      (El reloj se adelantará 1 hora)"
-            }
-            else {
-                # Ya pasamos los cambios de este año, mostrar el primero del próximo
-                $dstStartNext = Get-TransitionDate $currentRule.DaylightTransitionStart ($year + 1)
-                Write-Host "    - Próximo cambio ($($year + 1)): $($dstStartNext.ToString('dddd, dd MMMM yyyy HH:mm'))"
-            }
-        }
-
-        Write-Host "`n--- Fin de Verificación ---" -ForegroundColor Cyan
-
     }
-    catch {
-        Write-Error "Error ejecutando la verificación: $($_.Exception.Message)"
+
+    if ($FixRules) {
+        Write-Host "`n[!] Aplicando Patch Chile 2026 en Registro..." -ForegroundColor Yellow
+        # Binario oficial Chile 2026: Abril 4 (Invierno) y Septiembre 5 (Verano)
+        $bin = [byte[]] @(0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xC4, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x04, 0x00, 0x06, 0x00, 0x01, 0x00, 0x17, 0x00, 0x3B, 0x00, 0x3B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x09, 0x00, 0x06, 0x00, 0x01, 0x00, 0x17, 0x00, 0x3B, 0x00, 0x3B, 0x00, 0x00, 0x00)
+        $p = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones\Pacific SA Standard Time\Dynamic DST"
+        if (-not (Test-Path $p)) { New-Item -Path $p -Force | Out-Null }
+        Set-ItemProperty -Path $p -Name "2026" -Value $bin -Type Binary -Force
+        
+        Write-Host "[OK] Parche aplicado con éxito." -ForegroundColor Green
+        Write-Host "`n[PASO FINAL] Ejecuta este comando abajo para refrescar el sistema:" -ForegroundColor Cyan
+        Write-Host "tzutil /s ""Pacific SA Standard Time""" -ForegroundColor Cyan
     }
+}
+catch {
+    Write-Error "Error de ejecución: $($_.Exception.Message)"
 }
