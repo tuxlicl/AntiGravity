@@ -1,0 +1,30 @@
+import boto3
+
+def lambda_handler(event, context):
+    region = 'us-east-1'  # Reemplaza con tu región
+    instances = ['i-0f9c8fcb86755121f']  # Lista de IDs de instancias, cada instancia va entre '' y separados por comas 
+
+    ec2 = boto3.client('ec2', region_name=region)
+
+    try:
+        # Obtener el estado actual de las instancias
+        response = ec2.describe_instances(InstanceIds=instances)
+        running_instances = []
+
+        for reservation in response['Reservations']:
+            for instance in reservation['Instances']:
+                if instance['State']['Name'] == 'running':  # Solo apagar si está en estado "running"
+                    running_instances.append(instance['InstanceId'])
+
+        # Apagar solo las instancias que están en estado "running"
+        if running_instances:
+            ec2.stop_instances(InstanceIds=running_instances)
+            print(f"Apagando instancias: {running_instances}")
+            return {"status": "success", "stopped_instances": running_instances}
+        else:
+            print("No hay instancias en estado 'running' para apagar.")
+            return {"status": "no_action", "message": "Todas las instancias ya están apagadas o en un estado incorrecto."}
+
+    except Exception as e:
+        print(f"Error al apagar instancias: {str(e)}")
+        return {"status": "error", "message": str(e)}
