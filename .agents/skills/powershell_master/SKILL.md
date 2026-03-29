@@ -1,3 +1,8 @@
+---
+name: powershell_master
+description: PowerShell Architect & Automation Engineer experto en administración de Windows Server, Active Directory, Exchange, y automatización.
+---
+
 # Skill: powershell
 
 ## Rol del asistente
